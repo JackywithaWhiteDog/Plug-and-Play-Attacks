@@ -34,7 +34,7 @@ def perform_final_selection(w,
                             batch_size,
                             device,
                             rtpt=None):
-    target_values = set(targets.cpu().tolist())
+    target_values = sorted(list(set(targets.cpu().tolist())))
     final_targets = []
     final_w = []
     target_model.eval()
